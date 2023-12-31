@@ -48,6 +48,31 @@ function updateTime() {
   parisTimeElement.innerHTML = parisTime.format(
     "h:mm:ss:SS [<small>]A[</small]"
   );
+  let honoluluElement = document.querySelector("#honolulu");
+  honoluluElement;
+  let honoluluDateElement = honoluluElement.querySelector(".date");
+  let honoluluTimeElement = honoluluElement.querySelector(".time");
+  let honoluluTime = moment().tz("Pacific/Honolulu");
+
+  honoluluDateElement.innerHTML = moment()
+    .tz("Pacific/Honolulu")
+    .format("MMM D, YYYY");
+  honoluluTimeElement.innerHTML = honoluluTime.format(
+    "h:mm:ss:SS [<small>]A[</small]"
+  );
+
+  let taipeiElement = document.querySelector("#taipei");
+  taipeiElement;
+  let taipeiDateElement = taipeiElement.querySelector(".date");
+  let taipeiTimeElement = taipeiElement.querySelector(".time");
+  let taipeiTime = moment().tz("Asia/Taipei");
+
+  taipeiDateElement.innerHTML = moment()
+    .tz("Asia/Taipei")
+    .format("MMM D, YYYY");
+  taipeiTimeElement.innerHTML = taipeiTime.format(
+    "h:mm:ss:SS [<small>]A[</small]"
+  );
 }
 
 updateTime();
